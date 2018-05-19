@@ -1,0 +1,53 @@
+.cp{
+cursor:pointer
+}	.vishi{
+	visibility:hidden
+	}
+.hide{
+display:none
+}
+#oldan, #newan{
+border:3px solid #ef9;
+}
+.eword{
+background-color:#dde;
+margin:6;
+padding:6
+}
+.past{
+background-color:#ccc;
+}
+
+#lastdata{
+    background-color:blanchedalmond;
+    padding:6
+}
+#fur{
+    margin:9 3%
+}
+#rare{
+    border-bottom: 1px solid #333;
+}
+.self{
+    margin: 3em 0px;
+}
+#question{
+    border: 1px solid #0DE;
+    min-width: 33%;
+    padding: 6px;
+}
+#question:focus{
+    min-width: 39%;
+    -moz-transition:.9s;
+    -webkit-transition:.9s
+}
+.old, .new{
+    padding: 9px;
+}
+.elect{
+    background-color: #966;
+    color: #F99;
+}
+#oldan{
+    max-width: 69%
+}

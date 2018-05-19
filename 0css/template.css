@@ -1,0 +1,124 @@
+body{
+font:16px calibri
+}
+footer{
+/*    color:#fef;*/
+    opacity:.3;
+    text-align:center;
+}
+header{
+    margin: 1em 9px
+}
+header a{
+    text-decoration: none;
+    border-top: 3px solid #ef9;
+    margin:3px 9px;
+    padding: 6px
+}
+header a:hover{
+    background-color: #ef9;
+    -moz-transition:.9s;
+    -webkit-transition:.9s
+}
+#adm{
+    float: right
+}
+h4 span{
+    margin: 1em;
+    outline: 1px solid #FE9;
+    padding: 3px;
+}
+#pnm {
+    text-align: center
+}/*
+dl{
+    background-image:url(logo/unaBW.jpg);
+    background-repeat:no-repeat;
+    background-position:top;
+}*/
+#knowledge-data{
+    margin:0 3%
+}
+dl a{
+    border-bottom: 1px solid #fe3;
+    text-decoration: none;
+}
+dl a:hover{
+    background-color: #fe3
+}
+form{
+    margin:9px 3%
+}
+select{
+    padding:3px;
+    -webkit-appearance:none
+}
+#tese{
+    border: none
+}/*
+#btnsea{
+    background-color: #FEF;
+    border: none;
+    border-bottom: 1px solid #F96;
+}*/
+a{
+    color:#036
+}
+textarea{
+    background-color: #afe;
+    border-radius: 9px;
+    font: 16px verdana;
+    height: 6em;
+    max-width: 90%;
+    padding:9px;
+    resize:both;
+    width: 6cm;
+}
+textarea:focus{
+    background-color: #fff;
+    outline: none;
+    -webkit-transition:.9s
+}
+::selection {
+    background-color: #f09;
+    color: #303;
+}/*
+.each-data::before {
+  background: #69B7E2;
+  color: white;
+  content:counter(there, decimal);
+  counter-increment: there;
+  float: left;
+  font-weight: bold;
+  margin: 5px 5px 0px 2px;
+  padding: 0px 9px;
+  position: relative;
+}
+#knowledge-data{
+  counter-reset:there;
+}*/
+.each-data{
+    font-size: 1.13em;
+    padding-bottom: 9px
+}
+.each-data:hover{
+    background-color: #efe;
+    outline:1px solid #ded
+}
+input[type=submit], button{
+    border:1px solid #ccc;
+    background-color: transparent;
+    border-radius:6px;
+    padding:0px 6px;
+}
+input[type=submit]:hover, button:hover{
+    cursor: pointer;
+    box-shadow: #fb0 6px 3px 6px 0;
+    -webkit-box-shadow: #fb0 6px 3px 6px 0;
+    -moz-transition:.3s;
+    -webkit-transition:.3s
+}
+.semo{
+    float:right;
+    opacity: 0
+}

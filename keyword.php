@@ -1,0 +1,99 @@
+<?php
+if($data){
+    include'config/func.php';
+
+    if($page == 'up'){
+
+        $q = op('select kalimat, pola, jawab, g.kd from guide g, answer a
+        where a.kd = kd_ans and g.kd = ?', array($data), 1);
+
+    } elseif($page == 'unknown'){
+
+        $q = op('select*from unknown where kd=?', array($data), 1);
+
+    } elseif($page == 'answer'){
+
+        $q=op('select*from answer where kd=?', array($data), 1);
+    }
+}
+
+if( $q ){ ?>
+<p id='nty'></p>
+
+<?php if($page == 'up' || $page == 'answer'){ ?>
+<div id='lastdata'>
+<?php if($page == 'up'){ ?>
+
+    <div>Data Terdahulu</div>
+
+    <p>Bentuk Pertanyaan : <?php echo $q['kalimat'];?></p>
+    <p>Pola : <?php echo $q['pola'];?></p>
+    <p>Jawaban : <?php echo $q['jawab'];?></p>
+
+<?php } else { ?>
+
+    <div>Jawaban Terdahulu</div>
+    <p><?php echo $q['jawab'];?></p>
+<?php } ?>
+
+</div>
+<?php } ?>
+
+
+
+<div id='fur'>
+
+<?php if($page=='answer'){ ?>
+        <textarea id='answer_input'><?php echo $q['jawab'];?></textarea>
+        <button id="ansbtn"
+                data-kd="<?php echo $q['kd'];?>">Ubah</button>
+
+<?php } else { ?>
+
+<input id='question' placeholder ='Bentuk pertanyaan'
+       value='<?php echo $q['kalimat'];?>'>
+
+<p id='each' class="self">
+    <?php
+    if($page == 'unknown'){
+        $kalimat = $q['kalimat'];
+        $remQ = str_replace('?', '', $kalimat);
+        $clean = trim( $remQ );
+        
+        $word = explode(" ", $clean);
+        $sum = count($word);
+        for($len = 0; $len < $sum; $len++){ ?>
+
+        <span class='eword cp'><?php echo $word[ $len ];?></span>    
+        <?php
+        }
+    }
+    ?>
+</p>
+
+<p class="self">Pola: <span id='rare'></span></p>
+
+<span id='sub' class='vishi'>
+<p>
+
+<span id='oldto' class='old cp anc'>Jawaban Lama</span>
+<span id='newto' class='cp new anc'>Jawaban Baru</span></p>
+
+<p class="self">
+
+<select id='oldan' class='hide'></select>
+<textarea id='newan' class='hide' placeholder='Input Jawaban Baru'>
+</textarea></p>
+
+    <?php $btn = ($page == 'up')? array('edit', 'Ubah') :
+        array('send', 'Simpan'); ?>
+
+<button id='<?php echo $btn[ 0 ];?>'
+        data-hp="<?php if($page == 'unknown') echo $q['kd']?>"
+        data-kd="<?php if($page == 'up') echo $q['kd'];?>">
+    <?php echo $btn[ 1 ];?></button></span>
+
+<?php } ?>
+</div>
+
+<?php } else echo'Data tidak ada.'; ?>

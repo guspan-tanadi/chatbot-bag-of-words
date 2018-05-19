@@ -1,0 +1,13 @@
+.list{
+    font-size: 1.13em;
+    margin:3%;
+}
+.list:hover a{
+    text-decoration: none
+}
+sub{
+    color: #c0c0c0
+}
+.was{
+    outline:3px solid #f9f;
+}
