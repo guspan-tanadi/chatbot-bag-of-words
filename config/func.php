@@ -2,10 +2,10 @@
 function op($a, $b = 0, $d = 0){
 include'db.php';
     if($b){
-$q = $hub->prepare($a);
-$q->execute( $b);
+	$q = $hub->prepare($a);
+	$q->execute( $b);
     } else {
-$q = $hub->query($a);
+	$q = $hub->query($a);
     }
 
 $v = ($d) ? $q->fetch() : $q;
